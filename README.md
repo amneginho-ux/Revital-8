@@ -1,1 +1,1258 @@
 # Revital-8
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revital 8品牌行銷全方位需求研調問卷</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600&family=Noto+Sans+TC:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sage: #4a6f96;
+    --sage-light: #8aaec8;
+    --sage-pale: #edf2f7;
+    --cream: #faf7f2;
+    --warm-white: #f5f0e8;
+    --ink: #2c2c2c;
+    --ink-soft: #4a4a4a;
+    --muted: #8a8a8a;
+    --gold: #b8976a;
+    --gold-light: #d4b896;
+    --border: #d8cfc4;
+    --section-gap: 3rem;
+    /* ANGH Studio brand colors */
+    --angh-wine: #6b2232;
+    --angh-wine-light: #8a3548;
+    --angh-sand: #e8e0d5;
+    --angh-beige: #f2ece4;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
+  }
+
+  /* ── COVER ── */
+  .cover {
+    background: var(--warm-white);
+    color: var(--ink);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 2rem 7rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 20% 30%, rgba(42,74,107,0.07) 0%, transparent 70%),
+      radial-gradient(ellipse 50% 60% at 80% 70%, rgba(184,151,106,0.10) 0%, transparent 70%);
+  }
+
+  .cover-inner { position: relative; max-width: 680px; }
+
+  .cover-tag {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    letter-spacing: 0.25em;
+    color: var(--sage);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+  }
+
+  .cover h1 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 300;
+    line-height: 1.35;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+  }
+
+  .cover h1 em {
+    font-style: normal;
+    color: var(--gold);
+    font-weight: 500;
+  }
+
+  .cover-sub {
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    letter-spacing: 0.1em;
+    margin-bottom: 3rem;
+  }
+
+  .cover-divider {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin: 0 auto 2rem;
+  }
+
+  .cover-note {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.9;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .cover-brand-block {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .cover-studio-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-bottom: 0.3rem;
+  }
+
+  .cover-service-name {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+    letter-spacing: 0.08em;
+    font-weight: 300;
+    margin-bottom: 0.8rem;
+  }
+
+  .cover-slogan {
+    font-size: 0.75rem;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    line-height: 2;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 300;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--muted);
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    animation: fadeUpDown 2.5s ease-in-out infinite;
+  }
+
+  .scroll-hint::after {
+    content: '';
+    width: 1px;
+    height: 32px;
+    background: linear-gradient(to bottom, var(--border), transparent);
+  }
+
+  @keyframes fadeUpDown {
+    0%, 100% { opacity: 0.4; transform: translateX(-50%) translateY(0); }
+    50% { opacity: 0.8; transform: translateX(-50%) translateY(6px); }
+  }
+
+  /* ── MAIN WRAPPER ── */
+  .wrapper {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 5rem 2rem 8rem;
+  }
+
+  /* ── INTRO NOTE ── */
+  .intro-note {
+    background: var(--sage-pale);
+    border-left: 3px solid var(--sage);
+    border-radius: 0 8px 8px 0;
+    padding: 1.5rem 2rem;
+    margin-bottom: var(--section-gap);
+    font-size: 0.9rem;
+    line-height: 2;
+    color: var(--ink-soft);
+  }
+
+  .intro-note strong {
+    color: var(--sage);
+    font-weight: 500;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    margin-bottom: var(--section-gap);
+    page-break-inside: avoid;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.8rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--gold);
+    font-weight: 400;
+    line-height: 1;
+    flex-shrink: 0;
+    width: 2.5rem;
+  }
+
+  .section-title-wrap {}
+
+  .section-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+  }
+
+  .section-desc {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-top: 0.2rem;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── QUESTION ── */
+  .q-block {
+    margin-bottom: 1.8rem;
+  }
+
+  .q-label {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.03em;
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+
+  .q-num {
+    color: var(--sage);
+    flex-shrink: 0;
+    font-weight: 400;
+  }
+
+  .q-hint {
+    font-size: 0.77rem;
+    color: var(--muted);
+    margin-bottom: 0.6rem;
+    margin-left: 1.5rem;
+    line-height: 1.7;
+  }
+
+  textarea, input[type="text"] {
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 300;
+    color: var(--ink);
+    background: #fff;
+    resize: vertical;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+    line-height: 1.8;
+  }
+
+  textarea:focus, input[type="text"]:focus {
+    border-color: var(--sage);
+    box-shadow: 0 0 0 3px rgba(42,74,107,0.12);
+  }
+
+  textarea { min-height: 90px; }
+  textarea.sm { min-height: 60px; }
+  textarea.lg { min-height: 130px; }
+
+  /* ── CHECKBOX GRID ── */
+  .check-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 0.5rem;
+    margin-left: 1.5rem;
+  }
+
+  .check-grid.wide { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+
+  .check-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.45rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    background: #fff;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-size: 0.82rem;
+  }
+
+  .check-item:hover {
+    border-color: var(--sage-light);
+    background: var(--sage-pale);
+  }
+
+  .check-item input { accent-color: var(--sage); flex-shrink: 0; }
+
+  /* ── RADIO ROW ── */
+  .radio-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-left: 1.5rem;
+  }
+
+  .radio-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 0.9rem;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: #fff;
+    cursor: pointer;
+    font-size: 0.82rem;
+    transition: all 0.15s;
+  }
+
+  .radio-item:hover { border-color: var(--sage); background: var(--sage-pale); }
+  .radio-item input { accent-color: var(--sage); }
+
+  /* ── PRIORITY TABLE ── */
+  .priority-table {
+    margin-left: 1.5rem;
+    width: calc(100% - 1.5rem);
+    border-collapse: collapse;
+    font-size: 0.83rem;
+  }
+
+  .priority-table th {
+    background: var(--sage-pale);
+    padding: 0.55rem 0.9rem;
+    text-align: left;
+    font-weight: 500;
+    color: var(--ink-soft);
+    border: 1px solid var(--border);
+  }
+
+  .priority-table td {
+    border: 1px solid var(--border);
+    padding: 0.5rem 0.9rem;
+    background: #fff;
+    vertical-align: middle;
+  }
+
+  .priority-table input[type="text"] {
+    border: none;
+    background: transparent;
+    padding: 0;
+    font-size: 0.83rem;
+    min-height: unset;
+  }
+
+  .priority-table input[type="text"]:focus { box-shadow: none; }
+
+  /* ── SCALE ── */
+  .scale-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .scale-label { font-size: 0.78rem; color: var(--muted); }
+
+  .scale-options { display: flex; gap: 0.4rem; }
+
+  .scale-options label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    font-size: 0.75rem;
+    color: var(--muted);
+    cursor: pointer;
+  }
+
+  .scale-options input[type="radio"] { accent-color: var(--gold); }
+
+  /* ── DIVIDER ── */
+  .soft-divider {
+    border: none;
+    border-top: 1px dashed var(--border);
+    margin: 1.2rem 0 1.5rem 1.5rem;
+  }
+
+  /* ── TAG BUBBLE (display only) ── */
+  .tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-left: 1.5rem;
+    margin-top: 0.3rem;
+  }
+
+  .tag {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.7rem;
+    border-radius: 12px;
+    border: 1px solid var(--sage-light);
+    color: var(--sage);
+    background: var(--sage-pale);
+  }
+
+  /* ── SUBMIT AREA ── */
+  .submit-area {
+    margin-top: 4rem;
+    text-align: center;
+    padding: 3rem 2rem;
+    background: var(--warm-white);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+  }
+
+  .submit-area h3 {
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 400;
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.1em;
+    color: var(--ink);
+  }
+
+  .submit-area p {
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin-bottom: 2rem;
+    line-height: 1.9;
+  }
+
+  .btn-submit {
+    display: inline-block;
+    background: var(--sage);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.85rem 3rem;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+  }
+
+  .btn-submit:hover { background: #1e3a55; transform: translateY(-1px); }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 3rem 2rem;
+    font-size: 0.75rem;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    border-top: 1px solid var(--border);
+  }
+
+  /* ── TOAST ── */
+  .toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: var(--ink);
+    color: #fff;
+    padding: 0.6rem 1.4rem;
+    border-radius: 6px;
+    font-size: 0.82rem;
+    letter-spacing: 0.05em;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s;
+    z-index: 1000;
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  /* ── PRINT ── */
+  @media print {
+    .cover { min-height: auto; padding: 3rem 2rem; }
+    .scroll-hint { display: none; }
+  }
+
+  @media (max-width: 600px) {
+    .check-grid { grid-template-columns: 1fr 1fr; }
+    .cover h1 { font-size: 1.8rem; }
+    .section-num { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════════════════ COVER ════════════════════ -->
+<div class="cover">
+  <div class="cover-inner">
+    <div class="cover-tag">Brand Marketing · Discovery Questionnaire</div>
+    <h1>品牌行銷<br><em>全方位需求研調</em>問卷</h1>
+    <div class="cover-sub">Revital 8 &nbsp;×&nbsp; ANGH Studio</div>
+    <div class="cover-divider"></div>
+    <p class="cover-note">
+      本問卷目的是全面理解品牌現況、目標與資源，<br>
+      以便為您規劃最貼合需求的行銷策略藍圖。<br>
+      請盡可能詳細填寫，沒有標準答案，也都能隨時進行調整，<br>
+      您的每一個想法都是我們策略的起點。
+    </p>
+    <div class="cover-brand-block">
+      <div class="cover-studio-name">ANGH Studio</div>
+      <div class="cover-service-name">The Panoramic Branding Chain™ &nbsp;全景式品牌策略鏈</div>
+      <div class="cover-slogan">
+        用全景視野看懂市場、以策略鏈接品牌未來<br>
+        陪你一起認識市場、了解市場、征服市場
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">向下滾動開始填寫</div>
+</div>
+
+<!-- ════════════════════ MAIN ════════════════════ -->
+<div class="wrapper">
+
+  <div class="intro-note">
+    <strong>填寫說明：</strong>本問卷共分為八大區塊，預計填寫時間約 45–60 分鐘。部分題目可複選或留空補充，請依實際狀況如實填寫。若有尚未確定的方向，歡迎直接寫下您目前的想法或傾向，我們將在提案會議中一同深入討論。
+  </div>
+
+
+  <!-- ════ SECTION 1 ════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">01</div>
+      <div class="section-title-wrap">
+        <div class="section-title">品牌根基：故事、理念與識別</div>
+        <div class="section-desc">讓我們認識這個品牌從何而來、為何而生</div>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label"><span class="q-num">1.1</span>品牌創辦背景與故事</div>
+      <div class="q-hint">請描述創辦的起源、契機，或創辦人的親身經歷。這是品牌最珍貴的靈魂，越真實越好。</div>
+      <textarea class="lg" placeholder="例：創辦人因家人長期受慢性疾病困擾，深感市面上保健品成分複雜且缺乏透明度，因此決定⋯⋯"></textarea>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label"><span class="q-num">1.2</span>品牌核心理念與價值主張</div>
+      <div class="q-hint">品牌最想傳遞給消費者的信念是什麼？（例：純淨、科學實證、親近自然、信任感⋯⋯）</div>
+      <textarea placeholder="請描述您認為品牌最核心的精神與堅持"></textarea>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label"><span class="q-num">1.3</span>現有品牌標語／Slogan</div>
+      <div class="q-hint">若目前已有，請填寫；若尚未確定，請描述希望標語傳達的感受或方向。</div>
+      <textarea class="sm" placeholder="現有標語 或 理想感受方向"></textarea>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label"><span class="q-num">1.4</span>品牌視覺風格現況</div>
+      <div class="q-hint">目前是否已有確定的 Logo、品牌色、字體規範？請描述現有視覺風格，或理想中的品牌形象氛圍。</div>
+      <textarea placeholder="例：已有 Logo，主色為森林綠與米白，風格偏向日式簡約⋯⋯ 或：尚未確定，希望呈現乾淨、醫療感與溫暖並存的氣質"></textarea>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label"><span class="q-num">1.5</span>品牌希望被消費者用哪三個詞形容？</div>
+      <textarea class="sm" placeholder="例：安心、有效、值得信賴"></textarea>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label"><span class="q-num">1.6</span>品牌目前發展階段</div>
+      <div class="radio-row">
+        <label class="radio-item"><input type="radio" name="stage"> 新創初期（尚未上市）</label>
+        <label class="radio-item"><input type="radio" name="stage"> 剛上市（0–6 個月）</label>
+        <label class="radio-item"><input type="radio" name="stage"> 成長期（已有穩定銷售）</label>
+        <label class="radio-item"><input type="radio" name="stage"> 擴張期（積極拓展通路/市場）</label>
+        <label class="radio-item"><input type="radio" name="stage"> 品牌重塑／轉型</label>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ════ SECTION 2 ════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">02</div>
+      <div class="section-title-wrap">
+        <div class="section-title">目標受眾與市場佈局</div>
+        <div class="section-desc">釐清品牌現在服務誰、未來想觸及誰</div>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label"><span class="q-num">2.1</span>核心目標受眾輪廓</div>
+      <div class="q-hint">請描述您心目中最理想的核心顧客是誰（年齡、性別、職業、生活型態、健康需求等）。</div>
+      <textarea class="lg" placeholder="例：25–45 歲都會職業女性，重視自我保養，對成分有一定認知，願意為品質付出較高價格⋯⋯"></textarea>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label"><span class="q-num">2.2</span>主要目標年齡層（可複選）</div>
+      <div class="check-grid">
+        <label class="check-item"><input type="checkbox"> 18–24 歲</label>
+        <label class="check-item"><input type="checkbox"> 25–34 歲</label>
+        <label class="check-item"><input type="checkbox"> 35–44 歲</label>
+        <label class="check-item"><input type="checkbox"> 45–54 歲</label>
+        <label class="check-item"><input type="checkbox"> 55–64 歲</label>
+        <label class="check-item"><input type="checkbox"> 65 歲以上</label>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label"><span class="q-num">2.3</span>主要目標性別</div>
+      <div class="radio-row">
+        <label class="radio-item"><input type="radio" name="gender"> 以女性為主</label>
+        <label class="radio-item"><input type="radio" name="gender"> 以男性為主</label>
+        <label class="radio-item"><input type="radio" name="gender"> 男女均等</label>
+        <label class="radio-item"><input type="radio" name="gender"> 依產品線而異</label>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label"><span class="q-num">2.4</span>消費者購買動機推測（可複選）</div>
+      <div class="check-grid wide">
+        <label class="check-item"><input type="checkbox"> 預防保健／日常調養</label>
+        <label class="check-item"><input type="checkbox"> 特定症狀改善（睡眠、免疫等）</label>
+        <label class="check-item"><input type="checkbox"> 體態管理／減重</label>
+        <label class="check-item"><input type="checkbox"> 美容保養（皮膚、毛髮）</label>
+        <label class="check-item"><input type="checkbox"> 運動表現提升</label>
+        <label class="check-item"><input type="checkbox"> 銀髮族慢性病管理</label>
+        <label class="check-item"><input type="checkbox"> 兒童成長發育</label>
+        <label class="check-item"><input type="checkbox"> 送禮需求</label>
+        <label class="check-item"><input type="checkbox"> 醫師／營養師推薦</label>
+        <label class="check-item"><input type="checkbox"> 其他：</label>
+      </div>
+      <textarea class="sm" placeholder="其他補充說明"></textarea>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label"><span class="q-num">2.5</span>目前主要銷售地區</div>
+      <div class="radio-row">
+        <label class="radio-item"><input type="radio" name="region"> 台灣本島為主</label>
+        <label class="radio-item"><input type="radio" name="region"> 台灣＋港澳</label>
+        <label class="radio-item"><input type="radio" name="region"> 台灣＋東南亞</label>
+        <label class="radio-item"><input type="radio" name="region"> 計畫進入中國大陸市場</label>
+        <label class="radio-item"><input type="radio" name="region"> 全球化布局</label>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label"><span class="q-num">2.6</span>中長期市場發展目標</div>
+      <div class="q-hint">1 年內、3 年內分別希望達到什麼樣的市場位置？（通路、市占、品牌知名度等）</div>
+      <textarea class="lg" placeholder="1 年目標：&#10;3 年目標："></textarea>
+    </div>
+  </div>
+
+
+  <!-- ════ SECTION 3 ════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">03</div>
+      <div class="section-title-wrap">
+        <div class="section-title">產品線規劃與競爭優勢</div>
+        <div class="section-desc">深入了解您的產品，找出最有力的市場話語</div>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label"><span class="q-num">3.1</span>目前主力產品品項</div>
+      <div class="q-hint">請列出所有現有或即將推出的產品，包含名稱、功效定位與建議售價。</div>
+      <textarea class="lg" placeholder="產品一：xxx，功效：改善睡眠品質，售價：NT$xxx&#10;產品二：&#10;產品三："></textarea>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label"><span class="q-num">3.2</span>產品形態（可複選）</div>
+      <div class="check-grid">
+        <label class="check-item"><input type="checkbox"> 膠囊／錠劑</label>
+        <label class="check-item"><input type="checkbox"> 粉末沖泡包</label>
+        <label class="check-item"><input type="checkbox"> 液態瓶裝</label>
+        <label class="check-item"><input type="checkbox"> 凍飲／果凍條</label>
+        <label class="check-item"><input type="checkbox"> 飲品機能飲</label>
+        <label class="check-item"><input type="checkbox"> 貼片／外用</label>
+        <label class="check-item"><input type="checkbox"> 食品型態</label>
+        <label class="check-item"><input type="checkbox"> 其他</label>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label"><span class="q-num">3.3</span>核心成分與科學依據</div>
+      <div class="q-hint">主力成分為何？是否有專利成分、臨床實證、學術研究支持？</div>
+      <textarea placeholder="請描述關鍵成分及其科學依據或認證背書"></textarea>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label"><span class="q-num">3.4</span>產品認證與法規符合現況（可複選）</div>
+      <div class="check-grid wide">
+        <label class="check-item"><input type="checkbox"> 衛福部健康食品認證（小綠人標章 / 健食字號）</label>
+        <label class="check-item"><input type="checkbox"> TQF（原食品GMP）/ GMP 製造廠認證</label>
+        <label class="check-item"><input type="checkbox"> ISO 22000 / HACCP 食品安全管理體系認證</label>
+        <label class="check-item"><input type="checkbox"> 潔淨標章（Clean Label）/ 第三方無添加認證</label>
+        <label class="check-item"><input type="checkbox"> 有機認證（如慈心、USDA 等）</label>
+        <label class="check-item"><input type="checkbox"> 素食友善標章 / 認證（如 Halal 清真、SGS 素食測試等）</label>
+        <label class="check-item"><input type="checkbox"> 美國 FDA 設施登記 / 註冊</label>
+        <label class="check-item"><input type="checkbox"> 其他國際認證（如：國際蒙特獎 Monde Selection 等，請於下方簡述）</label>
+        <label class="check-item"><input type="checkbox"> 目前無特定認證，但符合基本食品安全法規</label>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label"><span class="q-num">3.5</span>相較競品，您認為最核心的差異化優勢是什麼？</div>
+      <textarea class="lg" placeholder="請從成分、製程、包裝、價格、品牌故事、服務等角度分別說明"></textarea>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label"><span class="q-num">3.6</span>主要競品品牌（國內外）</div>
+      <div class="q-hint">您最在意哪幾個競品品牌？它們的優缺點為何？</div>
+      <textarea placeholder="競品A：xxx，優點：，缺點：&#10;競品B："></textarea>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label"><span class="q-num">3.7</span>產品價格帶定位</div>
+      <div class="radio-row">
+        <label class="radio-item"><input type="radio" name="price"> 大眾親民（NT$300以下/月份）</label>
+        <label class="radio-item"><input type="radio" name="price"> 中價位（NT$300–800/月份）</label>
+        <label class="radio-item"><input type="radio" name="price"> 中高端（NT$800–1500/月份）</label>
+        <label class="radio-item"><input type="radio" name="price"> 高端精品（NT$1500以上/月份）</label>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ════ SECTION 4 ════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">04</div>
+      <div class="section-title-wrap">
+        <div class="section-title">銷售通路佈局規劃</div>
+        <div class="section-desc">釐清線上線下的銷售策略與資源投入優先順序</div>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label"><span class="q-num">4.1</span>實體通路——已合作或計劃進入（可複選）</div>
+      <div class="check-grid wide">
+        <label class="check-item"><input type="checkbox"> 屈臣氏 Watsons</label>
+        <label class="check-item"><input type="checkbox"> 康是美 Cosmed</label>
+        <label class="check-item"><input type="checkbox"> 寶雅 POYA</label>
+        <label class="check-item"><input type="checkbox"> 大樹藥局</label>
+        <label class="check-item"><input type="checkbox"> 家樂福 Carrefour</label>
+        <label class="check-item"><input type="checkbox"> 全聯 PX Mart</label>
+        <label class="check-item"><input type="checkbox"> 好市多 Costco</label>
+        <label class="check-item"><input type="checkbox"> 誠品書店</label>
+        <label class="check-item"><input type="checkbox"> 醫療院所通路</label>
+        <label class="check-item"><input type="checkbox"> 健身房／運動中心</label>
+        <label class="check-item"><input type="checkbox"> SPA／美容中心</label>
+        <label class="check-item"><input type="checkbox"> 有機／天然食品專賣店</label>
+        <label class="check-item"><input type="checkbox"> 便利商店（7-11／全家）</label>
+        <label class="check-item"><input type="checkbox"> 百貨公司專櫃</label>
+        <label class="check-item"><input type="checkbox"> 自有門市</label>
+        <label class="check-item"><input type="checkbox"> 其他：</label>
+      </div>
+      <input type="text" placeholder="其他通路補充">
+    </div>
+
+    <div class="q-block">
+      <div class="q-label"><span class="q-num">4.2</span>線上電商平台——已合作或計劃進入（可複選）</div>
+      <div class="check-grid wide">
+        <label class="check-item"><input type="checkbox"> 蝦皮 Shopee</label>
+        <label class="check-item"><input type="checkbox"> momo 購物網</label>
+        <label class="check-item"><input type="checkbox"> PChome 24h</label>
+        <label class="check-item"><input type="checkbox"> Yahoo 購物中心</label>
+        <label class="check-item"><input type="checkbox"> 樂天市場</label>
+        <label class="check-item"><input type="checkbox"> Pinkoi</label>
+        <label class="check-item"><input type="checkbox"> 瑪黑家居</label>
+        <label class="check-item"><input type="checkbox"> 博客來</label>
+        <label class="check-item"><input type="checkbox"> 品牌官方網站獨立站</label>
+        <label class="check-item"><input type="checkbox"> LINE 購物</label>
+        <label class="check-item"><input type="checkbox"> Facebook Shop</label>
+        <label class="check-item"><input type="checkbox"> Instagram Shop</label>
+        <label class="check-item"><input type="checkbox"> 東森購物（電視）</label>
+        <label class="check-item"><input type="checkbox"> 森森購物</label>
+        <label class="check-item"><input type="checkbox"> Lazada（東南亞）</label>
+        <label class="check-item"><input type="checkbox"> Shopee（東南亞）</label>
+        <label class="check-item"><input type="checkbox"> 天貓 / 京東（中國）</label>
+        <label class="check-item"><input type="checkbox"> Amazon（全球）</label>
+        <label class="check-item"><input type="checkbox"> 其他：</label>
+      </div>
+      <input type="text" placeholder="其他平台補充">
+    </div>
+
+    <div class="q-block">
+      <div class="q-label"><span class="q-num">4.3</span>通路優先發展順序</div>
+      <div class="q-hint">請依您目前的資源與策略，排列最希望優先投入的前三大通路。</div>
+      <textarea class="sm" placeholder="第1優先：&#10;第2優先：&#10;第3優先："></textarea>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label"><span class="q-num">4.4</span>目前自有官方網站現況</div>
+      <div class="radio-row">
+        <label class="radio-item"><input type="radio" name="website"> 已有完整官網且持續更新</label>
+        <label class="radio-item"><input type="radio" name="website"> 已有官網但需要改版</label>
+        <label class="radio-item"><input type="radio" name="website"> 尚在建置中</label>
+        <label class="radio-item"><input type="radio" name="website"> 尚無官網</label>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label"><span class="q-num">4.5</span>是否考慮會員制度或訂閱制銷售模式？</div>
+      <div class="radio-row">
+        <label class="radio-item"><input type="radio" name="subscription"> 是，已規劃</label>
+        <label class="radio-item"><input type="radio" name="subscription"> 是，有興趣但尚未規劃</label>
+        <label class="radio-item"><input type="radio" name="subscription"> 尚未考慮</label>
+        <label class="radio-item"><input type="radio" name="subscription"> 否</label>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ════ SECTION 5 ════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">05</div>
+      <div class="section-title-wrap">
+        <div class="section-title">行銷曝光渠道規劃</div>
+        <div class="section-desc">選擇最適合品牌的聲音出現在對的地方</div>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label"><span class="q-num">5.1</span>社群媒體——希望經營的平台（可複選）</div>
+      <div class="check-grid wide">
+        <label class="check-item"><input type="checkbox"> Instagram</label>
+        <label class="check-item"><input type="checkbox"> Facebook</label>
+        <label class="check-item"><input type="checkbox"> Threads</label>
+        <label class="check-item"><input type="checkbox"> YouTube</label>
+        <label class="check-item"><input type="checkbox"> TikTok</label>
+        <label class="check-item"><input type="checkbox"> LINE 官方帳號</label>
+        <label class="check-item"><input type="checkbox"> X（Twitter）</label>
+        <label class="check-item"><input type="checkbox"> 小紅書 RED</label>
+        <label class="check-item"><input type="checkbox"> Dcard</label>
+        <label class="check-item"><input type="checkbox"> PTT</label>
+        <label class="check-item"><input type="checkbox"> Podcast</label>
+        <label class="check-item"><input type="checkbox"> LinkedIn</label>
+        <label class="check-item"><input type="checkbox"> Pinterest</label>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label"><span class="q-num">5.2</span>數位廣告投放——希望使用的渠道（可複選）</div>
+      <div class="check-grid wide">
+        <label class="check-item"><input type="checkbox"> Google 廣告（SEA、GDN、PMax）</label>
+        <label class="check-item"><input type="checkbox"> Meta 廣告（Facebook / Instagram / Threads）</label>
+        <label class="check-item"><input type="checkbox"> YouTube 影音廣告</label>
+        <label class="check-item"><input type="checkbox"> TikTok 廣告</label>
+        <label class="check-item"><input type="checkbox"> LINE 廣告</label>
+        <label class="check-item"><input type="checkbox"> 小紅書廣告</label>
+        <label class="check-item"><input type="checkbox"> AEO / SEO 答案 / 搜尋引擎優化</label>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label"><span class="q-num">5.3</span>線下傳統媒體——有意願投入的類型（可複選）</div>
+      <div class="check-grid wide">
+        <label class="check-item"><input type="checkbox"> 公車車身廣告</label>
+        <label class="check-item"><input type="checkbox"> 計程車廣告</label>
+        <label class="check-item"><input type="checkbox"> 捷運站廣告</label>
+        <label class="check-item"><input type="checkbox"> 戶外看板</label>
+        <label class="check-item"><input type="checkbox"> 健康 ／ 美容 / 時尚雜誌</label>
+        <label class="check-item"><input type="checkbox"> 新聞媒體健康版</label>
+        <label class="check-item"><input type="checkbox"> 電視購物頻道</label>
+        <label class="check-item"><input type="checkbox"> Podcast / 廣播節目</label>
+        <label class="check-item"><input type="checkbox"> 健康講座 / 活動贊助</label>
+        <label class="check-item"><input type="checkbox"> 展覽攤位</label>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label"><span class="q-num">5.4</span>公關與媒體操作期望（可複選）</div>
+      <div class="check-grid wide">
+        <label class="check-item"><input type="checkbox"> 新聞稿發布與媒體露出</label>
+        <label class="check-item"><input type="checkbox"> 健康專欄文章置入</label>
+        <label class="check-item"><input type="checkbox"> 醫師／專家背書合作</label>
+        <label class="check-item"><input type="checkbox"> 品牌創辦人專訪</label>
+        <label class="check-item"><input type="checkbox"> 研究報告公關露出</label>
+        <label class="check-item"><input type="checkbox"> 公益形象活動</label>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label"><span class="q-num">5.5</span>目前社群媒體經營現況</div>
+      <div class="q-hint">各平台的追蹤人數、發文頻率、互動狀況，以及目前執行痛點或希望改善之處。</div>
+      <textarea class="lg" placeholder="IG：粉絲數 xxx，每週發文 x 次，互動率約 x%&#10;FB：&#10;目前痛點："></textarea>
+    </div>
+  </div>
+
+
+  <!-- ════ SECTION 6 ════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">06</div>
+      <div class="section-title-wrap">
+        <div class="section-title">代言人 ／ KOL ／ KOC 合作策略</div>
+        <div class="section-desc">找到最能代表品牌形象、真正影響受眾決策的合作夥伴</div>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label"><span class="q-num">6.1</span>希望合作的代言人類型（可複選）</div>
+      <div class="check-grid wide">
+        <label class="check-item"><input type="checkbox"> 知名藝人 ／ 明星代言</label>
+        <label class="check-item"><input type="checkbox"> 醫師 ／ 營養師 / 藥師 專業背書</label>
+        <label class="check-item"><input type="checkbox"> KOL 網紅合作</label>
+        <label class="check-item"><input type="checkbox"> KOC 素人口碑</label>
+        <label class="check-item"><input type="checkbox"> 複合策略（以上多種並行）</label>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label"><span class="q-num">6.2</span>KOL / KOC 興趣族群方向——最符合品牌的類型（可複選）</div>
+      <div class="q-hint">請勾選您認為最能有效觸及目標受眾的創作者類型。</div>
+
+      <div style="margin-left:1.5rem; margin-bottom:0.8rem; font-size:0.8rem; color: var(--sage); font-weight:500;">🌿 健康 ／ 醫療 ／ 保健</div>
+      <div class="check-grid wide" style="margin-bottom:1rem;">
+        <label class="check-item"><input type="checkbox"> 中西醫師</label>
+        <label class="check-item"><input type="checkbox"> 營養師</label>
+        <label class="check-item"><input type="checkbox"> 藥師</label>
+        <label class="check-item"><input type="checkbox"> 護理師</label>
+        <label class="check-item"><input type="checkbox"> 健康部落客</label>
+        <label class="check-item"><input type="checkbox"> 保健食品評測者</label>
+        <label class="check-item"><input type="checkbox"> 中醫養生創作者</label>
+        <label class="check-item"><input type="checkbox"> 抗老逆齡主題創作者</label>
+      </div>
+
+      <div style="margin-left:1.5rem; margin-bottom:0.8rem; font-size:0.8rem; color: var(--sage); font-weight:500;">💪 運動 ／ 健身 ／ 體態</div>
+      <div class="check-grid wide" style="margin-bottom:1rem;">
+        <label class="check-item"><input type="checkbox"> 健身教練</label>
+        <label class="check-item"><input type="checkbox"> 瑜伽教練</label>
+        <label class="check-item"><input type="checkbox"> 運動選手</label>
+        <label class="check-item"><input type="checkbox"> 慢跑 ／ 鐵人三項</label>
+        <label class="check-item"><input type="checkbox"> 體態管理創作者</label>
+        <label class="check-item"><input type="checkbox"> 戶外運動（登山、衝浪等）</label>
+        <label class="check-item"><input type="checkbox"> 舞蹈創作者</label>
+        <label class="check-item"><input type="checkbox"> 自行車愛好者</label>
+      </div>
+
+      <div style="margin-left:1.5rem; margin-bottom:0.8rem; font-size:0.8rem; color: var(--sage); font-weight:500;">✨ 美容 ／ 保養 ／ 生活風格</div>
+      <div class="check-grid wide" style="margin-bottom:1rem;">
+        <label class="check-item"><input type="checkbox"> 美妝保養 KOL</label>
+        <label class="check-item"><input type="checkbox"> 彩妝師</label>
+        <label class="check-item"><input type="checkbox"> 皮膚科相關創作者</label>
+        <label class="check-item"><input type="checkbox"> 慢活 ／ 療癒系創作者</label>
+        <label class="check-item"><input type="checkbox"> 日式生活風格創作者</label>
+        <label class="check-item"><input type="checkbox"> 精品 ／ 輕奢生活 KOL</label>
+        <label class="check-item"><input type="checkbox"> 斷捨離 ／ 極簡風格創作者</label>
+        <label class="check-item"><input type="checkbox"> 旅遊 ／ 都市探索創作者</label>
+      </div>
+
+      <div style="margin-left:1.5rem; margin-bottom:0.8rem; font-size:0.8rem; color: var(--sage); font-weight:500;">🍃 飲食 ／ 食物 ／ 永續</div>
+      <div class="check-grid wide" style="margin-bottom:1rem;">
+        <label class="check-item"><input type="checkbox"> 健康飲食創作者</label>
+        <label class="check-item"><input type="checkbox"> 素食 ／ 植物性飲食</label>
+        <label class="check-item"><input type="checkbox"> 料理食譜創作者</label>
+        <label class="check-item"><input type="checkbox"> 有機農業倡議者</label>
+        <label class="check-item"><input type="checkbox"> 永續環保議題創作者</label>
+        <label class="check-item"><input type="checkbox"> 無毒生活創作者</label>
+      </div>
+
+      <div style="margin-left:1.5rem; margin-bottom:0.8rem; font-size:0.8rem; color: var(--sage); font-weight:500;">👩‍👧 族群身份認同</div>
+      <div class="check-grid wide" style="margin-bottom:1rem;">
+        <label class="check-item"><input type="checkbox"> 新手媽媽 ／ 孕婦</label>
+        <label class="check-item"><input type="checkbox"> 職業媽媽</label>
+        <label class="check-item"><input type="checkbox"> 熟齡女性（45+）</label>
+        <label class="check-item"><input type="checkbox"> 銀髮族創作者</label>
+        <label class="check-item"><input type="checkbox"> 職場菁英 ／ 高壓族群</label>
+        <label class="check-item"><input type="checkbox"> 學生族群</label>
+        <label class="check-item"><input type="checkbox"> 寵物飼主（寵物保健）</label>
+        <label class="check-item"><input type="checkbox"> 夫妻 ／ 家庭親子創作者</label>
+      </div>
+
+      <div style="margin-left:1.5rem; margin-bottom:0.8rem; font-size:0.8rem; color: var(--sage); font-weight:500;">🎓 專業 ／ 知識型</div>
+      <div class="check-grid wide">
+        <label class="check-item"><input type="checkbox"> 科普知識創作者</label>
+        <label class="check-item"><input type="checkbox"> 生技 ／ 醫療產業從業者</label>
+        <label class="check-item"><input type="checkbox"> 心理諮商師</label>
+        <label class="check-item"><input type="checkbox"> 睡眠研究 ／ 壓力管理</label>
+        <label class="check-item"><input type="checkbox"> 財經 ／ 商業知識型 KOL</label>
+        <label class="check-item"><input type="checkbox"> 教育 ／ 育兒專家</label>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label"><span class="q-num">6.3</span>KOL 規模偏好（可複選）</div>
+      <div class="check-grid wide">
+        <label class="check-item"><input type="checkbox"> 奈米 KOC（1萬以下）</label>
+        <label class="check-item"><input type="checkbox"> 微型 KOL（1–5 萬）</label>
+        <label class="check-item"><input type="checkbox"> 中型 KOL（5–30 萬）</label>
+        <label class="check-item"><input type="checkbox"> 大型 KOL（30–100 萬）</label>
+        <label class="check-item"><input type="checkbox"> 頂級 KOL（100 萬以上）</label>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label"><span class="q-num">6.4</span>合作形式偏好（可複選）</div>
+      <div class="check-grid wide">
+        <label class="check-item"><input type="checkbox"> 一次性業配貼文</label>
+        <label class="check-item"><input type="checkbox"> 長期品牌大使</label>
+        <label class="check-item"><input type="checkbox"> 聯名 ／ 共同開發產品</label>
+        <label class="check-item"><input type="checkbox"> 試用體驗分享（口碑擴散）</label>
+        <label class="check-item"><input type="checkbox"> 專屬折扣碼合作</label>
+        <label class="check-item"><input type="checkbox"> 直播帶貨</label>
+        <label class="check-item"><input type="checkbox"> 活動 ／ 講座出席</label>
+        <label class="check-item"><input type="checkbox"> 影片開箱 ／ YouTube</label>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label"><span class="q-num">6.5</span>是否有特別欣賞或希望排除的合作方向？</div>
+      <textarea placeholder="例：希望合作的風格：真實、親切不過度商業化。希望避免：過度修圖風格、競品已合作的創作者⋯⋯"></textarea>
+    </div>
+  </div>
+
+
+  <!-- ════ SECTION 7 ════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">07</div>
+      <div class="section-title-wrap">
+        <div class="section-title">行銷預算與資源規劃</div>
+        <div class="section-desc">協助我們為您量身規劃最具效益的策略配置</div>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label"><span class="q-num">7.1</span>年度行銷總預算規模（概估）</div>
+      <div class="radio-row">
+        <label class="radio-item"><input type="radio" name="budget"> 50 萬以下</label>
+        <label class="radio-item"><input type="radio" name="budget"> 50–100 萬</label>
+        <label class="radio-item"><input type="radio" name="budget"> 100–300 萬</label>
+        <label class="radio-item"><input type="radio" name="budget"> 300–600 萬</label>
+        <label class="radio-item"><input type="radio" name="budget"> 600 萬以上</label>
+        <label class="radio-item"><input type="radio" name="budget"> 尚未確定，需顧問建議</label>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label"><span class="q-num">7.2</span>預算分配優先方向（請依重要性排序 1–5）</div>
+      <table class="priority-table">
+        <thead>
+          <tr>
+            <th>項目</th>
+            <th>優先順序（1=最優先）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>社群媒體經營 ／ 內容創作</td><td><input type="text" placeholder="填入 1–5"></td></tr>
+          <tr><td>付費數位廣告投放</td><td><input type="text" placeholder="填入 1–5"></td></tr>
+          <tr><td>KOL ／ KOC 合作</td><td><input type="text" placeholder="填入 1–5"></td></tr>
+          <tr><td>公關 ／ 媒體露出</td><td><input type="text" placeholder="填入 1–5"></td></tr>
+          <tr><td>線下活動 ／ 實體行銷</td><td><input type="text" placeholder="填入 1–5"></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label"><span class="q-num">7.3</span>品牌目前行銷團隊配置</div>
+      <div class="radio-row">
+        <label class="radio-item"><input type="radio" name="team"> 無內部行銷人員，全委外</label>
+        <label class="radio-item"><input type="radio" name="team"> 1–2 名兼任人員</label>
+        <label class="radio-item"><input type="radio" name="team"> 1–3 名專職行銷</label>
+        <label class="radio-item"><input type="radio" name="team"> 4 名以上行銷團隊</label>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label"><span class="q-num">7.4</span>您最希望顧問協助您解決的核心問題是什麼？</div>
+      <div class="q-hint">請直接說出您目前最大的行銷挑戰或痛點，不論大小都歡迎。</div>
+      <textarea class="lg" placeholder="例：不確定如何切入市場建立知名度、社群沒有流量轉換、通路拓展遇到阻力、預算有限但想要最大效益⋯⋯"></textarea>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label"><span class="q-num">7.5</span>預期啟動時程</div>
+      <div class="radio-row">
+        <label class="radio-item"><input type="radio" name="timeline"> 1 個月內</label>
+        <label class="radio-item"><input type="radio" name="timeline"> 1–3 個月</label>
+        <label class="radio-item"><input type="radio" name="timeline"> 3–6 個月</label>
+        <label class="radio-item"><input type="radio" name="timeline"> 半年以上</label>
+        <label class="radio-item"><input type="radio" name="timeline"> 視提案內容而定</label>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ════ SECTION 8 ════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">08</div>
+      <div class="section-title-wrap">
+        <div class="section-title">補充資訊與參考素材</div>
+        <div class="section-desc">讓我們在提案前充分理解您的品牌生態</div>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label"><span class="q-num">8.1</span>有無特別喜歡的品牌案例或參考風格？</div>
+      <div class="q-hint">國內外保健、美妝、食品或其他品牌皆可，請說明喜歡的原因（視覺、文案、策略等）。</div>
+      <textarea placeholder="品牌名稱：，喜歡的原因："></textarea>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label"><span class="q-num">8.2</span>目前是否有過往的行銷執行經驗或數據可分享？</div>
+      <div class="q-hint">例如：過去合作過的廣告成效、KOL 合作心得、銷售數據趨勢等。</div>
+      <textarea placeholder="例：上次投放 IG 廣告 CPC 約 NT$xx，ROI 約 x 倍；曾合作 KOL xx 效果良好 ／ 不理想⋯⋯"></textarea>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label"><span class="q-num">8.3</span>是否有任何行銷限制或特別注意事項？</div>
+      <div class="q-hint">例如：衛福部廣告規範、不宜使用的詞彙、競業協議、企業 CI 規範等。</div>
+      <textarea placeholder="例：保健食品廣告不得出現療效字眼⋯⋯"></textarea>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label"><span class="q-num">8.4</span>是否有需要特別提醒顧問的品牌敏感議題？</div>
+      <textarea class="sm" placeholder="例：過去曾有客訴事件、正在處理的法律議題、特定族群需特別謹慎溝通等"></textarea>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label"><span class="q-num">8.5</span>您對這次合作最大的期待是什麼？</div>
+      <textarea class="lg" placeholder="請自由描述，這裡是讓我們更了解您的空間"></textarea>
+    </div>
+  </div>
+
+
+  <!-- ════ SUBMIT ════ -->
+  <div class="submit-area">
+    <h3>感謝您完整填寫本問卷</h3>
+    <p>
+      我們將盡快與您安排品牌深度訪談，進一步確認策略方向。<br>
+      如有任何疑問，歡迎隨時與我們聯繫。
+    </p>
+    <button class="btn-submit" onclick="submitForm()">📩 提交問卷</button>
+  </div>
+
+</div>
+
+<footer>
+  ANGH Studio &nbsp;·&nbsp; The Panoramic Branding Chain™ &nbsp;·&nbsp; Brand Marketing Discovery Questionnaire &nbsp;·&nbsp; Confidential
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+  function showToast(msg, duration = 2500) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), duration);
+  }
+
+  // ── 提交問卷（Formspree） ──
+  async function submitForm() {
+    showToast('正在整理答案，請稍候…', 2000);
+
+    // 收集所有答案成一個大物件
+    const payload = {
+      '_subject': '【品牌研調問卷回覆】Revital 8 × ANGH Studio',
+      '填寫時間': new Date().toLocaleString('zh-TW'),
+    };
+
+    document.querySelectorAll('.section').forEach(section => {
+      const num = section.querySelector('.section-num');
+      const title = section.querySelector('.section-title');
+      if (!title) return;
+      const sectionLabel = (num ? num.textContent.trim() + ' ' : '') + title.textContent.trim();
+
+      section.querySelectorAll('.q-block').forEach(block => {
+        const labelEl = block.querySelector('.q-label');
+        if (!labelEl) return;
+        const qNum = labelEl.querySelector('.q-num');
+        const qText = (qNum
+          ? qNum.textContent.trim() + ' ' + labelEl.textContent.replace(qNum.textContent, '').trim()
+          : labelEl.textContent.trim()).trim();
+
+        const key = sectionLabel + ' ｜ ' + qText;
+        const answers = [];
+
+        // 文字輸入
+        block.querySelectorAll('textarea, input[type="text"]').forEach(el => {
+          if (el.value.trim()) answers.push(el.value.trim());
+        });
+
+        // 複選
+        block.querySelectorAll('input[type="checkbox"]:checked').forEach(cb => {
+          const lbl = cb.closest('label');
+          if (lbl) answers.push('☑ ' + lbl.textContent.trim());
+        });
+
+        // 單選
+        const radioChecked = block.querySelector('input[type="radio"]:checked');
+        if (radioChecked) {
+          const lbl = radioChecked.closest('label');
+          if (lbl) answers.push('● ' + lbl.textContent.trim());
+        }
+
+        payload[key] = answers.length ? answers.join('\n') : '（未填寫）';
+      });
+    });
+
+    try {
+      const res = await fetch('https://formspree.io/f/mqejwyvr', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      const json = await res.json();
+
+      if (res.ok) {
+        showToast('✅ 問卷已成功送出！感謝您的填寫。', 5000);
+        // 讓按鈕顯示成功狀態
+        document.querySelectorAll('.btn-submit, .tb-btn.primary').forEach(btn => {
+          btn.textContent = '✅ 已送出';
+          btn.disabled = true;
+          btn.style.opacity = '0.6';
+          btn.style.cursor = 'default';
+        });
+      } else {
+        const errMsg = json.errors ? json.errors.map(e => e.message).join(', ') : '請稍後再試';
+        showToast('✗ 送出失敗：' + errMsg, 4000);
+      }
+    } catch (err) {
+      showToast('✗ 網路錯誤，請確認連線後再試', 4000);
+    }
+  }
+</script>
+
+</body>
+</html>
